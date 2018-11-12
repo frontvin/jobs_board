@@ -18,7 +18,7 @@ body {
   background-color: $highlight_1;
   background-image: 
     linear-gradient(
-      to-right,
+      to right,
       $highlight_1,
       $highlight_1 25%,
       $highlight_2 25%,
@@ -40,7 +40,12 @@ body {
   margin: 0 auto;
 }
 
-.clearfix:before, .clearfix:after {
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
   clear: both;
 }
 
@@ -53,6 +58,7 @@ body {
     width: 75px;
     float: left;
   }
+
   h1 {
     float: left;
     margin: 0 0 0 1em;
@@ -60,6 +66,7 @@ body {
     font-size: 1.35em;
     padding-top: 1.1em;
     color: $main;
+
     span {
       font-weight: 400;
     } 
@@ -69,11 +76,13 @@ body {
 .nav {
   float: right;
   padding-top: 1.75em;
+
   a {
     color: $secondary;
     margin-left: 1em;
     text-decoration: none;
   }
+
   .current {
      font-weight: 700;
      color: $main; 
@@ -85,19 +94,22 @@ body {
   position: relative;
   list-style: none;
   padding: 0;
-  &:after {
+
+  &::after {
     content: " ";
     width: 1px;
     background: 1px $border;
     height: 90%;
     position: absolute;
-    top: 3em;
+    top: 5em;
     left: 3em;
     z-index: 0;
   }
-  a{
-     text-decoration: none;
+
+  a {
+    text-decoration: none;
   }
+
   .listing {
     background: $white;
     border: 1px solid $border;
@@ -108,14 +120,17 @@ body {
     z-index: 1;
     display: table;
     width: 96%;
+    
     img, .info, .job_type {
       display: table-cell;
       vertical-align: middle;
       font-size: .9em;
       color: $secondary;
     }
+
     .image_wrapper {
       width: 60px;
+
       img {
         width: 60px;
         display: block;
@@ -123,23 +138,28 @@ body {
         border-radius: .25em;
       }
     }
-    .info{
-      line-height: 1.25em;
+
+    .info {
+      line-height: 1.25;
       width: 640px;
       padding-left: 25px;
-      .job_title{
+
+      .job_title {
         font-weight: 700;
         color: $main;
         font-size: 1.5em;
       }
+
       .job_info {
         color: $secondary;
         display: block;
+
         span {
           margin: 0 .75em;
         }
       }
     }
+
     .job_type {
       text-transform: uppercase;
       font-weight: 700;
@@ -148,7 +168,8 @@ body {
       white-space: nowrap;
       padding-top: .6em;
       width: 100px;
-      &:before {
+
+      &::before {
         content: " ";
         background: $highlight_1;
         width: 10px;
@@ -159,36 +180,46 @@ body {
         top: 28px;
       }
     }
+
     .full_time {
       color: $highlight_1;
-      &:before {
+
+      &::before {
         background: $highlight_1;
       }
     }
+
     .part_time {
       color: $highlight_2;
-      &:before {
+
+      &::before {
         background: $highlight_2;
       }
     }
+
     .freelance {
       color: $highlight_3;
-      &:before {
+
+      &::before {
         background: $highlight_3;
       }
     }
     .contract {
       color: $highlight_4;
-      &:before {
+
+      &::before {
         background: $highlight_4;
       }
     }
+
     transition: all .3s ease-in-out;
+    
     &:hover {
       cursor: pointer;
       box-shadow: 0px 2px 40px 0 rgba(0, 0, 0, 0.1);
     }
   }
+
   .date {
     display: inline-block;
     padding: .6em 0;
@@ -207,6 +238,7 @@ body {
 
 .load_more {
   text-align: center;
+
   .button {
     border: 2px solid $highlight_4;
     outline: none;
@@ -216,6 +248,7 @@ body {
     border-radius: 3em;
     color: $highlight_4;
     transition: all .3s ease-in-out;
+
     &:hover {
       border: 2px solid $main;
       color: $main;
@@ -224,6 +257,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+
   .main_header {
     margin: 3em 0;
   }
@@ -232,9 +266,11 @@ body {
     display: block;
     margin: 0 auto;
     text-align: center;
+
     img {
       float: left;
     }
+
     h1 {
       float: none ;
       margin: 0;
@@ -245,6 +281,7 @@ body {
   .nav {
     float: none;
     text-align: center;
+
     a {
       margin: 0 .5em;
     }
@@ -252,21 +289,26 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+
   #timeline {
     .listing {
       .image_wrapper {
         margin-right: 1em;
+
         img {
           width: 50px;
         }
       }
+
       .info {
         width: 100%;
         padding: .4em 0 0 0;
+
         .job_title  {
           font-size: 1.25em;
         }
       }
+
       .job_type {
         display: none;
       }
